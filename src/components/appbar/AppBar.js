@@ -95,6 +95,7 @@ const AppBarDesktop = ({ isStatic }) => {
             </A>
             <OutlinedButton
               text="Relawan Batch#2"
+              href="/register"
               style={{
                 color: !isSticky ? "#FFF" : null,
                 fontSize: 18,

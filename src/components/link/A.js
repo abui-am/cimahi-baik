@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const A = ({ href, as, children, base, component = "h5", props }) => {
+const A = ({ href, as, children, base = false, component = "h5", props }) => {
   const classes = useStyles();
 
   return (
