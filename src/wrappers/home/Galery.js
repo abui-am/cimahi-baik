@@ -7,51 +7,51 @@ import { Fade } from "react-awesome-reveal";
 
 const photos = [
   {
-    src: "/images/1.jpg ",
+    src: "/images/1.JPG ",
     name: "image1",
   },
   {
-    src: "/images/2.jpg ",
+    src: "/images/2.JPG ",
     name: "image2",
   },
   {
-    src: "/images/3.jpg ",
+    src: "/images/3.JPG ",
     name: "image3",
   },
   {
-    src: "/images/4.jpg ",
+    src: "/images/4.JPG ",
     name: "image4",
   },
   {
-    src: "/images/5.jpg ",
+    src: "/images/5.JPG ",
     name: "image5",
   },
   {
-    src: "/images/6.jpg ",
+    src: "/images/6.JPG ",
     name: "image6",
   },
   {
-    src: "/images/7.jpg ",
+    src: "/images/7.JPG ",
     name: "image7",
   },
   {
-    src: "/images/8.jpg ",
+    src: "/images/8.JPG ",
     name: "image8",
   },
   {
-    src: "/images/9.jpg ",
+    src: "/images/9.JPG ",
     name: "image9",
   },
   {
-    src: "/images/10.jpg ",
+    src: "/images/10.JPG ",
     name: "image10",
   },
   {
-    src: "/images/11.jpg ",
+    src: "/images/11.JPG ",
     name: "image11",
   },
   {
-    src: "/images/12.jpg ",
+    src: "/images/12.JPG ",
     name: "image12",
   },
 ];
@@ -117,7 +117,7 @@ const Galery = () => {
           dotListClass=""
           draggable
           focusOnSelect={false}
-          partialVisbile
+          partialVisibile
           infinite
           itemClass=""
           keyBoardControl
