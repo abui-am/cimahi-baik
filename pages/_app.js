@@ -7,6 +7,7 @@ import theme from "~/theme";
 import PageTransition from "../src/components/transition/PageTransition";
 import "react-multi-carousel/lib/styles.css";
 import "react-image-lightbox/style.css"; // This only needs to be imported once in your app
+import HeadList from "~/components/head/Head";
 
 export default function MyApp(props) {
   const { Component, pageProps, router } = props;
@@ -31,6 +32,7 @@ export default function MyApp(props) {
           href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
           rel="stylesheet"
         ></link>
+        {HeadList}
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}

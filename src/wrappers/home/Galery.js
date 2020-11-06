@@ -117,7 +117,7 @@ const Galery = () => {
           dotListClass=""
           draggable
           focusOnSelect={false}
-          partialVisibile
+          partialVisible
           infinite
           itemClass=""
           keyBoardControl
