@@ -1,227 +1,212 @@
-import React from "react";
-import { fade, makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import InputBase from "@material-ui/core/InputBase";
-import Badge from "@material-ui/core/Badge";
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
-import SearchIcon from "@material-ui/icons/Search";
-import AccountCircle from "@material-ui/icons/AccountCircle";
-import MailIcon from "@material-ui/icons/Mail";
-import NotificationsIcon from "@material-ui/icons/Notifications";
-import MoreIcon from "@material-ui/icons/MoreVert";
+import { AppBar, makeStyles, useMediaQuery, useTheme } from "@material-ui/core";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import OutlinedButton from "../button/OutlinedButton";
 import A from "../link/A";
-
+import MenuIcon from "@material-ui/icons/Menu";
 const useStyles = makeStyles((theme) => ({
-  grow: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "block",
-    },
-  },
-  search: {
-    position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(3),
-      width: "auto",
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
+  base: {
+    height: 94,
+    marginLeft: 80,
+    marginRight: 80,
     display: "flex",
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+    transition: "0.5s all",
   },
-  inputRoot: {
-    color: "inherit",
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create("width"),
+  baseInner: {
     width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
+    height: "100%",
   },
-  sectionDesktop: {
-    display: "none",
-    [theme.breakpoints.up("md")]: {
-      display: "flex",
-    },
-  },
-  sectionMobile: {
+  logo: {
+    float: "left",
     display: "flex",
-    [theme.breakpoints.up("md")]: {
-      display: "none",
-    },
+    alignItems: "center",
+    height: "100%",
+  },
+  link: {
+    float: "right",
+    display: "flex",
+    alignItems: "center",
+    height: "100%",
+  },
+  menuText: {
+    fontFamily: "Raleway",
+    fontStyle: "normal",
+    fontWeight: "bold",
+    fontSize: 18,
+    letterSpacing: "0.01em",
+    marginRight: 60,
+    color: theme.palette.text.primary,
+    marginBlockStart: 0,
+    marginBlockEnd: 0,
+  },
+}));
+const AppBarDesktop = ({ isStatic }) => {
+  const classes = useStyles();
+  const [isSticky, setIsSticky] = useState(isStatic);
+  const handleScroll = () => {
+    if (window.scrollY < 1) setIsSticky(false);
+    else setIsSticky(true);
+  };
+
+  useEffect(() => {
+    !isStatic && window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <AppBar
+      position="sticky"
+      style={{
+        boxShadow: "none",
+        background: !isSticky ? "none" : "#fff",
+        transition: "0.5s all",
+        zIndex: 200,
+      }}
+    >
+      <div
+        className={classes.base}
+        style={{
+          height: isSticky ? 80 : null,
+        }}
+      >
+        <div className={classes.baseInner}>
+          <div className={classes.logo}>
+            {!isSticky ? (
+              <A href="/">
+                <img src="/logo-putih.svg" width={175} height={32} alt="logo" />
+              </A>
+            ) : (
+              <A href="/">
+                <img src="/logo-hitam.svg" width={175} height={32} alt="logo" />
+              </A>
+            )}
+          </div>
+          <div className={classes.link}>
+            <A href="/" component="span">
+              <h5
+                className={classes.menuText}
+                style={{ color: !isSticky ? "#FFF" : null }}
+              >
+                Siapa Kita?
+              </h5>
+            </A>
+            <OutlinedButton
+              text="Relawan Batch#2"
+              style={{
+                color: !isSticky ? "#FFF" : null,
+                fontSize: 18,
+                padding: "8px 16px",
+              }}
+            />
+          </div>
+        </div>
+      </div>
+    </AppBar>
+  );
+};
+
+const AppBarMobileStyle = makeStyles((theme) => ({
+  base: {
+    // height: 80,
+    padding: "16px 24px",
+    background: "white",
+  },
+  baseInner: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    alignItems: "center",
+  },
+  logo: {
+    flex: "1 1",
+  },
+  menu: {
+    flex: "0 0",
+  },
+  boxMenu: {
+    height: 48,
+    width: 64,
+    display: "flex",
+    justifyContent: "center",
+    border: "1px solid #e4e4e4",
+    borderRadius: 8,
+    padding: 4,
+    cursor: "pointer",
   },
 }));
 
-export default function AppBarComponent() {
-  const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
-  const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleProfileMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-
-  const handleMobileMenuOpen = (event) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
-
-  const menuId = "primary-search-account-menu";
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
-
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: "top", horizontal: "right" }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-    </Menu>
-  );
-
+const AppBarMobile = () => {
+  const classes = AppBarMobileStyle();
+  const [open, setOpen] = useState(false);
   return (
-    <div className={classes.grow}>
-      <AppBar position="static">
-        <Toolbar>
-          <A href="/" base>
-            <Typography className={classes.title} variant="h6" noWrap>
-              Bui&apos;s Boilerplate
-            </Typography>
+    <div className={classes.base}>
+      <div className={classes.baseInner}>
+        <div className={classes.logo}>
+          <A href="/" component="div">
+            <Image src="/cimahi-baik.png" width={175} height={32} alt="logo" />
           </A>
-
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "search" }}
+        </div>
+        <div className={classes.menu}>
+          <div className={classes.boxMenu}>
+            <MenuIcon
+              style={{ width: "100%", height: "100%" }}
+              onClick={() => setOpen((open) => !open)}
             />
           </div>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </div>
-          <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
+        </div>
+      </div>
+      <div
+        style={{
+          transition: "all 0.5s",
+          background: "white",
+          maxHeight: open ? 600 : 0,
+          opacity: open ? 1 : 0,
+          transform: !open ? "translateY(100%)" : "translateY(0)",
+          paddingTop: open ? 24 : 0,
+        }}
+      >
+        <ListNav text="Siapa Kita?" href="/" />
+        <ListNav text="Relawan Batch#2" href="/register" />
+      </div>
     </div>
   );
-}
+};
+
+const ListNav = ({ text, href }) => {
+  return (
+    <div
+      style={{
+        padding: "16px 16px",
+        borderTop: "1px solid #e4e4e4",
+      }}
+    >
+      <A href={href} component="div">
+        <h5
+          style={{
+            fontFamily: "Raleway",
+            fontStyle: "normal",
+            fontWeight: "bold",
+            fontSize: 18,
+            lineHeight: "21px",
+            marginBlockStart: 0,
+            marginBlockEnd: 0,
+            color: "#121212",
+          }}
+        >
+          {text}
+        </h5>
+      </A>
+    </div>
+  );
+};
+
+const AppBarComponent = ({ isStatic }) => {
+  const theme = useTheme();
+  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
+  return isSm ? <AppBarMobile /> : <AppBarDesktop isStatic={isStatic} />;
+};
+
+export default AppBarComponent;

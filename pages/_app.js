@@ -5,6 +5,8 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "~/theme";
 import PageTransition from "../src/components/transition/PageTransition";
+import "react-multi-carousel/lib/styles.css";
+import "react-image-lightbox/style.css"; // This only needs to be imported once in your app
 
 export default function MyApp(props) {
   const { Component, pageProps, router } = props;
@@ -20,11 +22,15 @@ export default function MyApp(props) {
   return (
     <React.Fragment>
       <Head>
-        <title>My page</title>
+        <title>Cimahi Baik Batch#2</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}

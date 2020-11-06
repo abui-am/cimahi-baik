@@ -1,6 +1,7 @@
 import { makeStyles } from "@material-ui/core";
 import Link from "next/link";
 import PropTypes from "prop-types";
+import { createElement } from "react";
 
 const useStyles = makeStyles((theme) => ({
   a: {
@@ -11,12 +12,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const A = ({ href, as, children, base }) => {
+const A = ({ href, as, children, base, component = "h5", props }) => {
   const classes = useStyles();
 
   return (
     <Link href={href} as={as} passHref>
-      <a className={!base ? classes.a : null}>{children}</a>
+      <a className={!base ? classes.a : null} {...props}>
+        {createElement(component, {}, children)}
+      </a>
     </Link>
   );
 };
@@ -24,6 +27,8 @@ const A = ({ href, as, children, base }) => {
 A.propTypes = {
   href: PropTypes.string,
   as: PropTypes.string,
+  component: PropTypes.string,
+  base: PropTypes.boolean,
 };
 
 export default A;

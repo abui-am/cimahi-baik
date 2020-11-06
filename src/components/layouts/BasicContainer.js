@@ -9,11 +9,15 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     textAlign: "center",
     width: "100%",
-    marginTop: theme.spacing(5),
   },
   wrapper: {
     width: "100%",
-    maxWidth: 1064,
+    paddingLeft: 180,
+    paddingRight: 180,
+    [theme.breakpoints.down("sm")]: {
+      paddingRight: 24,
+      paddingLeft: 24,
+    },
   },
 }));
 const BasicContainer = ({ children, style, className }) => {

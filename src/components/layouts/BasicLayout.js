@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import AppBar from "~/components/appbar/AppBar";
 
-const BasicLayout = ({ children }) => {
+const BasicLayout = ({ children, staticAppBar }) => {
   return (
     <motion.div
       exit={{ opacity: 0 }}
@@ -10,7 +10,7 @@ const BasicLayout = ({ children }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <AppBar />
+      <AppBar isStatic={staticAppBar} />
       {children}
     </motion.div>
   );
