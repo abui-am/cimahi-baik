@@ -184,7 +184,9 @@ const List = ({ index, name, tupoksi = [] }) => {
       <div
         style={{
           display: "flex",
+          cursor: "pointer",
         }}
+        onClick={() => setShow((show) => !show)}
       >
         <div style={{ display: "flex", flex: "1 1" }}>
           <span className={classes.number}>{index + 1}</span>
@@ -194,7 +196,6 @@ const List = ({ index, name, tupoksi = [] }) => {
           <div
             className={classes.seeTupoksi}
             style={{ color: show ? "#2A5693" : null }}
-            onClick={() => setShow((show) => !show)}
           >
             {!isSm ? (
               <span style={{ flex: "1 1", whiteSpace: "nowrap" }}>
