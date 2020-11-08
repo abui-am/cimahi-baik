@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 const JadiRelawan = () => {
   const classes = useStyles();
   return (
-    <div style={{ paddingTop: 80 }}>
+    <div style={{ paddingTop: 80, paddingBottom: 80 }}>
       <h1 className={classes.title}>Divisi yang terbuka</h1>
       <div className={classes.textBody}>
         Kami membutuhkan beberapa orang untuk membantu divisi yang tersedia,
