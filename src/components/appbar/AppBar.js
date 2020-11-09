@@ -85,12 +85,20 @@ const AppBarDesktop = ({ isStatic }) => {
             )}
           </div>
           <div className={classes.link}>
-            <A href="/" component="span">
+            <A href="/program" component="span">
               <h5
                 className={classes.menuText}
                 style={{ color: !isSticky ? "#FFF" : null }}
               >
                 Siapa Kita?
+              </h5>
+            </A>
+            <A href="/" component="span">
+              <h5
+                className={classes.menuText}
+                style={{ color: !isSticky ? "#FFF" : null }}
+              >
+                Program
               </h5>
             </A>
             <OutlinedButton
@@ -170,6 +178,7 @@ const AppBarMobile = () => {
         }}
       >
         <ListNav text="Siapa Kita?" href="/" />
+        <ListNav text="Program" href="/program" />
         <ListNav text="Relawan Batch#2" href="/register" />
       </div>
     </div>

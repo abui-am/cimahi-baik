@@ -63,7 +63,7 @@ function OutlinedButton({
 }) {
   const classes = useStyles();
   return (
-    <A href={href} props={propsLink}>
+    <A href={href} props={propsLink} component="div">
       <button
         className={clsx(classes.outline, className)}
         onClick={onClick}
