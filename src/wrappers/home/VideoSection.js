@@ -87,7 +87,9 @@ const VideoSection = () => {
 
         <div style={{ paddingTop: 57 }}>
           <Fade direction="up" triggerOnce>
-            <h5 className={classes.text}>Kebaikan dalah tentang memberi</h5>
+            <h5 className={classes.text}>
+              {"Kebaikan Adalah Tentang Memberi"}
+            </h5>
           </Fade>
         </div>
       </div>

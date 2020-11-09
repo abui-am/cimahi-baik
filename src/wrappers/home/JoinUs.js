@@ -89,8 +89,8 @@ const JoinUs = () => {
         variants={variants}
         ref={ref}
       >
-        Ini masih permulaan, masih banyak yang harus dilakukan. Oleh karena itu,
-        kami butuh bantuan relawan
+        Ini masih langkah awal, masih banyak lagi langkah yang harus dilakukan.
+        Kami membutuhkan kamu untuk jadi relawan Cimahi Baik
       </motion.div>
       <motion.div
         animate={animation}
@@ -99,7 +99,7 @@ const JoinUs = () => {
       >
         <OutlinedButton
           href="/register"
-          text="Jadi Relawan Batch#2"
+          text="Jadi Relawan #Batch2"
           style={{ marginLeft: "auto", marginRight: "auto" }}
         />
       </motion.div>

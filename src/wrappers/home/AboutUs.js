@@ -32,13 +32,13 @@ const useStyles = makeStyles((theme) => ({
 
 const aboutUsContent = [
   {
-    title: "Wadah Penebar kebaikan",
+    title: "Wadah Penebar Kebaikan",
     icon: "/icon1.svg",
     desc:
       "Cimahi Baik adalah program sosial dibawah naungan Info Cimahi yang dibentuk dengan tujuan sebagai wadah  masyarakat Kota Cimahi dan sekitarnya untuk menebarkan kebaikan secara bersama-sama. ",
   },
   {
-    title: "Dibentuk untuk berbagi kebaikan",
+    title: "Dibentuk Untuk Berbagi Kebaikan",
     icon: "/icon2.svg",
     desc:
       "Cimahi Baik dibentuk pada bulan Juni tahun 2019, Cimahi Baik saat ini memiliki 55 orang relawan dari 365 pendaftar batch pertama yang terpilih bergabung bersama relawan Cimahi Baik, antusias untuk berbagi kebaikan secara bersama-sama cukup banyak.",
@@ -52,7 +52,9 @@ const AboutUs = () => {
     <section className={classes.section}>
       <div>
         <Fade direction="up" triggerOnce>
-          <h1 className={classes.title}>Sebenarnya apasih Cimahi Baik itu?</h1>
+          <h1 className={classes.title}>
+            {"Sebenarnya Apa Sih Cimahi Baik Itu?"}
+          </h1>
         </Fade>
 
         <div>

@@ -20,12 +20,14 @@ const useStyles = makeStyles((theme) => ({
     background: "rgba(0, 0, 0, 0.7)",
   },
   textBox: {
-    marginTop: 180,
+    marginTop: 120,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    paddingRight: 180,
+    paddingLeft: 180,
     [theme.breakpoints.down("sm")]: {
-      marginTop: 120,
+      marginTop: 80,
       paddingRight: 24,
       paddingLeft: 24,
     },
@@ -39,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
 
     color: "#FFFFFF",
-    marginBottom: 8,
+    marginBottom: 16,
     [theme.breakpoints.down("sm")]: {
       fontSize: 32,
       lineHeight: "1.3",
@@ -54,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     maxWidth: 746,
     color: "rgba(255, 255, 255, 0.8)",
-    paddingBottom: 24,
+    paddingBottom: 32,
   },
   section: {
     marginTop: -94,
@@ -95,15 +97,18 @@ const Home = () => {
               duration={500}
               triggerOnce
             >
-              <h1 className={classes.title}>Mari Membantu Sesama</h1>
+              <h1 className={classes.title}>
+                Berbagi Kebahagiaan Bersama Cimahi Baik
+              </h1>
               <div className={classes.subtitle}>
-                Ada ribuan orang yang kurang beruntung di kota kita tercinta
-                ini, selama kita mampu membantu, kenapa tidak?
+                Banyak di luar sana yang membutuhkan uluran tangan kita, ini
+                saatnya untuk berempati dengan menebarkan kebaikan secara
+                bersama-sama
               </div>
             </Fade>
             <Zoom delay={1200} duration={300} triggerOnce>
               <OutlinedButton
-                text="Saya Tertarik Membantu"
+                text="Saya Ingin Menebar Kebaikan"
                 href="#start"
                 style={{ color: "#fff" }}
               />

@@ -93,7 +93,7 @@ const AppBarDesktop = ({ isStatic }) => {
                 Siapa Kita?
               </h5>
             </A>
-            <A href="/ program" component="span">
+            <A href="/program" component="span">
               <h5
                 className={classes.menuText}
                 style={{ color: !isSticky ? "#FFF" : null }}
