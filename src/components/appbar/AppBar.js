@@ -102,7 +102,7 @@ const AppBarDesktop = ({ isStatic }) => {
               </h5>
             </A>
             <OutlinedButton
-              text="Relawan Batch#2"
+              text="Relawan #Batch2"
               href="/register"
               style={{
                 color: !isSticky ? "#FFF" : null,
@@ -179,7 +179,7 @@ const AppBarMobile = () => {
       >
         <ListNav text="Siapa Kita?" href="/" />
         <ListNav text="Program" href="/program" />
-        <ListNav text="Relawan Batch#2" href="/register" />
+        <ListNav text="Relawan #Batch2" href="/register" />
       </div>
     </div>
   );
