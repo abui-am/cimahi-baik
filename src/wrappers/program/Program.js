@@ -309,7 +309,7 @@ const DonationCard = () => {
           </p>
         </div>
         <div className={classes.body}>
-          <Count name="Donasi Terkumpul" value={3833267} prefix="Rp" />
+          <Count name="Donasi Terkumpul" value={5178267} prefix="Rp" />
           <Count name="Donasi Tersalurkan" value={0} prefix="Rp" />
 
           <div className={classes.donasiWrapper}>
@@ -346,7 +346,9 @@ const DonationCard = () => {
         </div>
       </div>
       <div className={classes.textDuration}>
-        Donasi akan ditutup pada hari Rabu, 11 November 2020 pukul 21:00 WIB
+        Donasi terakhir kali terdupdate pada Senin, 9 November 2020 pukul 21:00
+        WIB. Donasi akan ditutup pada hari Rabu, 11 November 2020 pukul 21:00
+        WIB
       </div>
     </div>
   );
