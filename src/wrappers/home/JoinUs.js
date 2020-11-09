@@ -1,5 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import { motion, useAnimation } from "framer-motion";
+import Link from "next/link";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import OutlinedButton from "~/components/button/OutlinedButton";
@@ -30,6 +31,16 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 28,
       lineHieght: 1.3,
     },
+  },
+  bottomText: {
+    fontFamily: "'PT Sans',sans-serif",
+    fontStyle: "normal",
+    fontWeight: "bold",
+    fontSize: 18,
+    lineHeight: "23px",
+    textAlign: "center",
+    width: "100%",
+    color: "rgba(0, 0, 0, 0.8)",
   },
 }));
 const JoinUs = () => {
@@ -100,8 +111,21 @@ const JoinUs = () => {
         <OutlinedButton
           href="/register"
           text="Jadi Relawan #Batch2"
-          style={{ marginLeft: "auto", marginRight: "auto" }}
+          style={{ marginLeft: "auto", marginRight: "auto", marginBottom: 24 }}
         />
+      </motion.div>
+      <motion.div
+        animate={animation}
+        initial="hidden2"
+        variants={variantButton}
+        className={classes.bottomText}
+      >
+        Belum bisa menjadi relawan?{" "}
+        <Link href="/program">
+          <span style={{ textDecoration: "underline", cursor: "pointer" }}>
+            Ayo berdonasi saja!
+          </span>
+        </Link>
       </motion.div>
     </div>
   );

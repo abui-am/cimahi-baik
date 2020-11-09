@@ -23,7 +23,7 @@ export default function MyApp(props) {
   return (
     <React.Fragment>
       <Head>
-        <title>Cimahi Baik Batch#2</title>
+        <title>Cimahi Baik #Batch2</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"

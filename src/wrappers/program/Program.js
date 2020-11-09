@@ -318,7 +318,7 @@ const DonationCard = () => {
             </div>
             <div className={classes.donasiInner}>
               <h6 className={classes.textNoRek}>13 90 46 78 14</h6>
-              <span className={classes.textAN}>Bank BCA a/n Nita Maryam</span>
+              <span className={classes.textAN}>Bank BCA a/n Nita Mariyam</span>
             </div>
           </div>
           <div
