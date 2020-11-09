@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React from "react";
 import { Fade, Zoom } from "react-awesome-reveal";
 import OutlinedButton from "~/components/button/OutlinedButton";
 import AboutUs from "./AboutUs";
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     maxWidth: 746,
     color: "rgba(255, 255, 255, 0.8)",
-    marginBottom: 56,
+    paddingBottom: 24,
   },
   section: {
     marginTop: -94,
@@ -96,10 +96,10 @@ const Home = () => {
               triggerOnce
             >
               <h1 className={classes.title}>Mari Membantu Sesama</h1>
-              <span className={classes.subtitle}>
+              <div className={classes.subtitle}>
                 Ada ribuan orang yang kurang beruntung di kota kita tercinta
                 ini, selama kita mampu membantu, kenapa tidak?
-              </span>
+              </div>
             </Fade>
             <Zoom delay={1200} duration={300} triggerOnce>
               <OutlinedButton

@@ -7,13 +7,14 @@ import OutlinedButton from "~/components/button/OutlinedButton";
 
 const useStyles = makeStyles((theme) => ({
   section: {
-    marginTop: 48,
+    marginTop: 24,
     marginLeft: -100,
     marginRight: -100,
     textAlign: "left",
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
       marginRight: 0,
+      marginTop: 24,
     },
   },
   base: {
@@ -40,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
   },
   contentWrapper: {
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(2),
   },
   textTitle: {
     fontFamily: "'Raleway',sans-serif",
@@ -54,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       fontSize: 28,
       lineHeight: 1.2,
+      marginTop: 16,
     },
   },
   textDesc: {
@@ -67,6 +69,9 @@ const useStyles = makeStyles((theme) => ({
     color: "rgba(18, 18, 18, 0.8)",
     marginBlockStart: "16px",
     marginBlockEnd: 0,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 14,
+    },
   },
   right: {
     flex: "0 0 511px",
@@ -137,6 +142,10 @@ const donationCardStyle = makeStyles((theme) => ({
     borderRadius: 8,
     padding: theme.spacing(6),
     marginBottom: theme.spacing(4),
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(2),
+      marginTop: theme.spacing(3),
+    },
   },
   head: {
     paddingBottom: theme.spacing(1),
@@ -226,6 +235,11 @@ const donationCardStyle = makeStyles((theme) => ({
     color: "rgba(42, 86, 147, 0.8)",
     marginBlockEnd: 0,
     marginBlockStart: 0,
+    paddingLeft: 8,
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: 0,
+      paddingTop: 8,
+    },
   },
   whatsappDiv: {
     marginTop: theme.spacing(1),
@@ -267,6 +281,16 @@ const donationCardStyle = makeStyles((theme) => ({
     padding: 16,
     marginTop: 8,
   },
+  donasiInner: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+      alignItems: "start",
+      justifyContent: "left",
+    },
+  },
 }));
 
 const DonationCard = () => {
@@ -292,17 +316,9 @@ const DonationCard = () => {
             <div className={classes.textDonasiSekarang}>
               Donasi sekarang dapat disalurkan melalui
             </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+            <div className={classes.donasiInner}>
               <h6 className={classes.textNoRek}>13 90 46 78 14</h6>
-              <span className={classes.textAN} style={{ paddingLeft: 8 }}>
-                Bank BCA a/n Nita Maryam
-              </span>
+              <span className={classes.textAN}>Bank BCA a/n Nita Maryam</span>
             </div>
           </div>
           <div
