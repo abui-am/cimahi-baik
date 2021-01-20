@@ -7,51 +7,51 @@ import { Fade } from "react-awesome-reveal";
 
 const photos = [
   {
-    src: "/images/1.jpg",
+    src: "/1.jpg",
     name: "image1",
   },
   {
-    src: "/images/2.jpg",
+    src: "/2.jpg",
     name: "image2",
   },
   {
-    src: "/images/3.jpg",
+    src: "/3.jpg",
     name: "image3",
   },
   {
-    src: "/images/4.jpg",
+    src: "/4.jpg",
     name: "image4",
   },
   {
-    src: "/images/5.jpg",
+    src: "/5.jpg",
     name: "image5",
   },
   {
-    src: "/images/6.jpg",
+    src: "/6.jpg",
     name: "image6",
   },
   {
-    src: "/images/7.jpg",
+    src: "/7.jpg",
     name: "image7",
   },
   {
-    src: "/images/8.jpg",
+    src: "/8.jpg",
     name: "image8",
   },
   {
-    src: "/images/9.jpg",
+    src: "/9.jpg",
     name: "image9",
   },
   {
-    src: "/images/10.jpg",
+    src: "/10.jpg",
     name: "image10",
   },
   {
-    src: "/images/11.jpg",
+    src: "/11.jpg",
     name: "image11",
   },
   {
-    src: "/images/12.jpg",
+    src: "/12.jpg",
     name: "image12",
   },
 ];
