@@ -97,7 +97,7 @@ const JadiRelawan = () => {
   );
 };
 
-const ListStyle = makeStyles((theme) => ({
+const ListStyle = makeStyles(() => ({
   base: {
     padding: 36,
     marginBottom: 40,

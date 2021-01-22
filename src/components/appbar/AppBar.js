@@ -117,7 +117,7 @@ const AppBarDesktop = ({ isStatic }) => {
   );
 };
 
-const AppBarMobileStyle = makeStyles((theme) => ({
+const AppBarMobileStyle = makeStyles(() => ({
   base: {
     // height: 80,
     padding: "16px 24px",

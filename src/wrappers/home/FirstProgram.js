@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Grid, makeStyles } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { useCountUp } from "react-countup";

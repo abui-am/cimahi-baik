@@ -120,7 +120,7 @@ const Home = () => {
   );
 };
 
-const HomeComponent = ({}) => {
+const HomeComponent = () => {
   return (
     <>
       <Home />

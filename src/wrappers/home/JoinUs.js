@@ -4,7 +4,6 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import OutlinedButton from "~/components/button/OutlinedButton";
-import A from "~/components/link/A";
 
 const useStyles = makeStyles((theme) => ({
   base: {
@@ -46,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 const JoinUs = () => {
   const classes = useStyles();
   const animation = useAnimation();
-  const [ref, inView, entry] = useInView({ threshold: 0.1 });
+  const [ref, inView] = useInView({ threshold: 0.1 });
   useEffect(() => {
     if (inView) {
       animation.start("visible");
