@@ -6,6 +6,7 @@ const Footer = () => {
       <div
         style={{
           padding: "22px 24px",
+          marginTop: 32,
           display: "flex",
           justifyContent: "center",
           background: "#2E3238",
@@ -25,7 +26,7 @@ const Footer = () => {
             color: "#FFFFFF",
           }}
         >
-          Cobyright by ©infocimahi.co
+          Copyright by ©infocimahi.co
         </span>
       </div>
     </footer>

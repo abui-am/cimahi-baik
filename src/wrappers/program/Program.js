@@ -90,7 +90,6 @@ const Program = () => {
               layout="fill"
               className={classes.imageInner}
               style={{ objectFit: "cover" }}
-              loader="text.."
             />
             <div
               style={{
@@ -309,44 +308,57 @@ const DonationCard = () => {
           </p>
         </div>
         <div className={classes.body}>
-          <Count name="Donasi Terkumpul" value={5178267} prefix="Rp" />
-          <Count name="Donasi Tersalurkan" value={0} prefix="Rp" />
+          <Count name="Donasi Terkumpul" value={7308267} prefix="Rp" />
+          <Count name="Donasi Tersalurkan" value={7308267} prefix="Rp" />
 
-          <div className={classes.donasiWrapper}>
-            <div className={classes.textDonasiSekarang}>
-              Donasi sekarang dapat disalurkan melalui
-            </div>
-            <div className={classes.donasiInner}>
-              <h6 className={classes.textNoRek}>13 90 46 78 14</h6>
-              <span className={classes.textAN}>Bank BCA a/n Nita Mariyam</span>
-            </div>
-          </div>
-          <div
-            style={{
-              fontFamily: "Raleway",
-              fontStyle: "normal",
-              fontWeight: "bold",
-              fontSize: 18,
-              lineHeight: "21px",
-              letterSpacing: "0.01em",
+          {false ? (
+            <>
+              <div className={classes.donasiWrapper}>
+                <div className={classes.textDonasiSekarang}>
+                  Donasi sekarang dapat disalurkan melalui
+                </div>
+                <div className={classes.donasiInner}>
+                  <h6 className={classes.textNoRek}>13 90 46 78 14</h6>
+                  <span className={classes.textAN}>
+                    Bank BCA a/n Nita Mariyam
+                  </span>
+                </div>
+              </div>
+              <div
+                style={{
+                  fontFamily: "Raleway",
+                  fontStyle: "normal",
+                  fontWeight: "bold",
+                  fontSize: 18,
+                  lineHeight: "21px",
+                  letterSpacing: "0.01em",
 
-              color: "#121212",
-              paddingTop: 16,
-              marginBottom: 8,
-            }}
-          >
-            Nara hubung
-          </div>
-          <OutlinedButton
-            className={classes.whatsappButton}
-            propsLink={{ target: "_blank", rel: "noreferrer" }}
-            href="https://wa.me/6289689368296"
-            text="Whatsapp (Nita)"
-          />
+                  color: "#121212",
+                  paddingTop: 16,
+                  marginBottom: 8,
+                }}
+              >
+                Nara hubung
+              </div>
+              <OutlinedButton
+                className={classes.whatsappButton}
+                propsLink={{ target: "_blank", rel: "noreferrer" }}
+                href="https://wa.me/6289689368296"
+                text="Whatsapp (Nita)"
+              />
+            </>
+          ) : (
+            <>
+              <h4>
+                Donasi telahh ditutup. Terimakasih kepada semua orang yang telah
+                menyumbangkan sedikit hartanya.
+              </h4>
+            </>
+          )}
         </div>
       </div>
       <div className={classes.textDuration}>
-        Donasi terakhir kali terdupdate pada Senin, 9 November 2020 pukul 21:00
+        Donasi terakhir kali terupdate pada Rabu, 11 November 2020 pukul 21:00
         WIB. Donasi akan ditutup pada hari Rabu, 11 November 2020 pukul 21:00
         WIB
       </div>
