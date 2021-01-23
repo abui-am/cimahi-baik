@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
   contentWrapper: {
     marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(4),
   },
   textTitle: {
     fontFamily: "'Raleway',sans-serif",
