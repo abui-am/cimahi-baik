@@ -8,6 +8,9 @@ import PageTransition from "../src/components/transition/PageTransition";
 import "react-multi-carousel/lib/styles.css";
 import "react-image-lightbox/style.css"; // This only needs to be imported once in your app
 import HeadList from "~/components/head/Head";
+import "dayjs/locale/id";
+import dayjs from "dayjs";
+dayjs.locale("id");
 
 export default function MyApp(props) {
   const { Component, pageProps, router } = props;

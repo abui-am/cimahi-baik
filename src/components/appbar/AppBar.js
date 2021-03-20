@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import OutlinedButton from "../button/OutlinedButton";
 import A from "../link/A";
 import MenuIcon from "@material-ui/icons/Menu";
+import active from "~/json/active.json";
+
 const useStyles = makeStyles((theme) => ({
   base: {
     height: 94,
@@ -93,7 +95,7 @@ const AppBarDesktop = ({ isStatic }) => {
                 Siapa Kita?
               </h5>
             </A>
-            <A href="/program" component="span">
+            <A href={"/programs/" + active.activeProgramId} component="span">
               <h5
                 className={classes.menuText}
                 style={{ color: !isSticky ? "#FFF" : null }}
@@ -178,7 +180,10 @@ const AppBarMobile = () => {
         }}
       >
         <ListNav text="Siapa Kita?" href="/" />
-        <ListNav text="Ayo Berdonasi" href="/program" />
+        <ListNav
+          text="Ayo Berdonasi"
+          href={"/programs/" + active.activeProgramId}
+        />
         <ListNav text="Relawan #Batch2" href="/register" />
       </div>
     </div>

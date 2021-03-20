@@ -1,7 +1,8 @@
 /* eslint-disable no-undef */
 module.exports = {
   //   trailingSlash: true,
-  assetPrefix: ".",
+  basePath: "",
+  assetPrefix: "",
   images: {
     deviceSizes: [320, 420, 768, 1024, 1200],
     iconSizes: [],

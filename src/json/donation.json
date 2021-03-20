@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "Ayo Bantu Pak Harun dan Emak Een",
+    "desc": "Pak Harun (72 tahun) adalah seorang sopir angkuran umum jurusan ST Hall-Cimahi, Ema Een (67 tahun) istrinya setia di samping abah selalu menemani disaat mencari penumpang. Kisah Abah dan Ema cukup menginspirasi kita tentang kesetiaan. Tapi, di saat masa pandemi covid-19 saat ini Abah Harun harus bekerja keras untuk mencari penumpang angkot yang semakin sepi, penghasilan tidak menentu setiap harinya kadang tidak dapat penghasilan, paling besar hanya Rp20.000 setiap harinya, untuk bayar bensin, setoran angkot, kontrakan dan kebutuhan sehari-hari kadang tidak mencukupi.",
+    "detail": {
+      "title": "Donasi untuk Abah Harun dan Emak Een",
+      "desc": "Salurkan donasi terbaik yang kamu punya untuk Abah Harun dan Emak Een",
+      "personInCharge": "Bank BCA a/n Nita Mariyam",
+      "bankNumber": 1390467814,
+      "contact": {
+        "name": "Whatsapp (Nita)",
+        "number": 6289689368296
+      }
+    },
+    "donation": {
+      "accumulated": 7308267,
+      "funneled": 7308267,
+      "status": "closed"
+    },
+    "lastUpdated": "2020-10-11T21:00:00+0700",
+    "closed": "2020-10-11T21:00:00+0700"
+  }
+]

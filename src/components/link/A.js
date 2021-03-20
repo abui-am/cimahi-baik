@@ -28,7 +28,7 @@ A.propTypes = {
   href: PropTypes.string,
   as: PropTypes.string,
   component: PropTypes.string,
-  base: PropTypes.boolean,
+  base: PropTypes.bool,
 };
 
 export default A;

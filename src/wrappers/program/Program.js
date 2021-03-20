@@ -1,4 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
+import dayjs from "dayjs";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { useCountUp } from "react-countup";
@@ -78,8 +79,9 @@ const useStyles = makeStyles((theme) => ({
     flex: "0 0 511px",
   },
 }));
-const Program = () => {
+const Program = ({ data }) => {
   const classes = useStyles();
+  const { title, desc, detail, lastUpdated, closed, donation } = data;
   return (
     <section className={classes.section}>
       <div className={classes.base}>
@@ -110,25 +112,18 @@ const Program = () => {
             {/* </div> */}
           </div>
           <div className={classes.contentWrapper}>
-            <h1 className={classes.textTitle}>
-              Ayo Bantu Pak Harun dan Emak Een
-            </h1>
-            <p className={classes.textDesc}>
-              Pak Harun (72 tahun) adalah seorang sopir angkuran umum jurusan ST
-              Hall-Cimahi, Ema Een (67 tahun) istrinya setia di samping abah
-              selalu menemani disaat mencari penumpang. Kisah Abah dan Ema cukup
-              menginspirasi kita tentang kesetiaan. Tapi, di saat masa pandemi
-              covid-19 saat ini Abah Harun harus bekerja keras untuk mencari
-              penumpang angkot yang semakin sepi, penghasilan tidak menentu
-              setiap harinya kadang tidak dapat penghasilan, paling besar hanya
-              Rp20.000 setiap harinya, untuk bayar bensin, setoran angkot,
-              kontrakan dan kebutuhan sehari-hari kadang tidak mencukupi.
-            </p>
+            <h1 className={classes.textTitle}>{title}</h1>
+            <p className={classes.textDesc}>{desc}</p>
           </div>
         </div>
 
         <div className={classes.right}>
-          <DonationCard />
+          <DonationCard
+            detail={detail}
+            lastUpdated={lastUpdated}
+            closed={closed}
+            donation={donation}
+          />
         </div>
       </div>
     </section>
@@ -293,36 +288,31 @@ const donationCardStyle = makeStyles((theme) => ({
   },
 }));
 
-const DonationCard = () => {
+const DonationCard = ({ detail, lastUpdated, closed, donation }) => {
   const classes = donationCardStyle();
-
+  const { personInCharge, bankNumber, contact, title, desc } = detail;
+  const { name, number: contactNumber } = contact;
+  const { accumulated, funneled, status } = donation;
   return (
     <div className={classes.base}>
       <div style={{ marginBottom: 40 }}>
         <div className={classes.head}>
-          <h5 className={classes.titleHead}>
-            Donasi untuk Abah Harun dan Emak Een
-          </h5>
-          <p className={classes.descHead}>
-            Salurkan donasi terbaik yang kamu punya untuk Abah Harun dan Emak
-            Een
-          </p>
+          <h5 className={classes.titleHead}>{title}</h5>
+          <p className={classes.descHead}>{desc}</p>
         </div>
         <div className={classes.body}>
-          <Count name="Donasi Terkumpul" value={7308267} prefix="Rp" />
-          <Count name="Donasi Tersalurkan" value={7308267} prefix="Rp" />
+          <Count name="Donasi Terkumpul" value={accumulated} prefix="Rp" />
+          <Count name="Donasi Tersalurkan" value={funneled} prefix="Rp" />
 
-          {false ? (
+          {!status === "closed" ? (
             <>
               <div className={classes.donasiWrapper}>
                 <div className={classes.textDonasiSekarang}>
                   Donasi sekarang dapat disalurkan melalui
                 </div>
                 <div className={classes.donasiInner}>
-                  <h6 className={classes.textNoRek}>13 90 46 78 14</h6>
-                  <span className={classes.textAN}>
-                    Bank BCA a/n Nita Mariyam
-                  </span>
+                  <h6 className={classes.textNoRek}>{bankNumber}</h6>
+                  <span className={classes.textAN}>{personInCharge}</span>
                 </div>
               </div>
               <div
@@ -344,8 +334,8 @@ const DonationCard = () => {
               <OutlinedButton
                 className={classes.whatsappButton}
                 propsLink={{ target: "_blank", rel: "noreferrer" }}
-                href="https://wa.me/6289689368296"
-                text="Whatsapp (Nita)"
+                href={"https://wa.me/" + contactNumber}
+                text={name}
               />
             </>
           ) : (
@@ -359,8 +349,10 @@ const DonationCard = () => {
         </div>
       </div>
       <div className={classes.textDuration}>
-        Donasi terakhir kali terupdate pada Rabu, 11 November 2020 pukul 21:00
-        WIB. Donasi akan ditutup pada hari Rabu, 11 November 2020 pukul 21:00
+        Donasi terakhir kali terupdate pada{" "}
+        {dayjs(lastUpdated).format("dddd, DD MMMM YYYY pukul HH:mm ")}
+        WIB. Donasi akan ditutup pada hari{" "}
+        {dayjs(closed).format("dddd, DD MMMM YYYY pukul HH:mm ")}
         WIB
       </div>
     </div>
